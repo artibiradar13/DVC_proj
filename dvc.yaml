@@ -1,8 +1,16 @@
 stages:
   preprocess_stage:
-    cmd: python preprocess.py
+    cmd: python src/preprocess.py
     deps:
     - data/Raw/online_retail.csv
-    - preprocess.py
+    - src/preprocess.py
     outs:
     - data/Processed/processed_data.csv
+  train_model:
+    cmd: python models/train_model.py
+    deps:
+    - data/Processed/processed_data.csv
+    - models/train_model.py
+    outs:
+    - data/Processed/rfm_clustered.csv
+    - models/kmeans_model.pkl

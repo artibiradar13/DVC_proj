@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  preprocess_stage:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/Raw/online_retail.csv
+      hash: md5
+      md5: 7e64244e60747a06a4cafc8e152aa31b
+      size: 48581636
+    - path: src/preprocess.py
+      hash: md5
+      md5: 078e01fcfd8620bfdca5b3786a5534e3
+      size: 1519
+    outs:
+    - path: data/Processed/processed_data.csv
+      hash: md5
+      md5: 4284ae9f6b5d69cbd6fd05a72fc0e8ff
+      size: 152145
+  train_model:
+    cmd: python models/train_model.py
+    deps:
+    - path: data/Processed/processed_data.csv
+      hash: md5
+      md5: 4284ae9f6b5d69cbd6fd05a72fc0e8ff
+      size: 152145
+    - path: models/train_model.py
+      hash: md5
+      md5: e5133ed1f6ace5f9f5a50e5f844aab70
+      size: 589
+    outs:
+    - path: data/Processed/rfm_clustered.csv
+      hash: md5
+      md5: 681f900648f9d524175d1c3832dec354
+      size: 69433
+    - path: models/kmeans_model.pkl
+      hash: md5
+      md5: 7a05193f33327887b99f69b1e3114ab9
+      size: 18139

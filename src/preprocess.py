@@ -52,4 +52,4 @@ def segment(row):
 
 rfm['Segment'] = rfm.apply(segment, axis=1)
 
-rfm.to_csv("processed_data.csv")
+rfm.to_csv("data/Processed/processed_data.csv", index=False)
