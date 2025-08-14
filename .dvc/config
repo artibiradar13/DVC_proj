@@ -1,4 +1,6 @@
 [core]
-    remote = c:\users\brdrv\onedrive\desktop\dvc
+    remote = myremote
 ['remote "c:\users\brdrv\onedrive\desktop\dvc"']
     url = ../data
+['remote "myremote"']
+    url = C:\Users\brdrv\OneDrive\Desktop\DVC_data
