@@ -1,0 +1,4 @@
+[core]
+    remote = c:\users\brdrv\onedrive\desktop\dvc
+['remote "c:\users\brdrv\onedrive\desktop\dvc"']
+    url = ../data
