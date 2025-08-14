@@ -1,0 +1,8 @@
+stages:
+  preprocess_stage:
+    cmd: python preprocess.py
+    deps:
+    - data/Raw/online_retail.csv
+    - preprocess.py
+    outs:
+    - data/Processed/processed_data.csv
