@@ -14,3 +14,11 @@ stages:
     outs:
     - data/Processed/rfm_clustered.csv
     - models/kmeans_model.pkl
+  
+  evaluate_model:
+    cmd: python metrics/evaluate.py
+    deps:
+      - data/Processed/rfm_clustered.csv
+      - metrics/evaluate.py
+    metrics:
+      - metrics/cluster_metrics.json

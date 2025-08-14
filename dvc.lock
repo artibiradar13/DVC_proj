@@ -36,3 +36,19 @@ stages:
       hash: md5
       md5: 7a05193f33327887b99f69b1e3114ab9
       size: 18139
+  evaluate_model:
+    cmd: python metrics/evaluate.py
+    deps:
+    - path: data/Processed/rfm_clustered.csv
+      hash: md5
+      md5: 681f900648f9d524175d1c3832dec354
+      size: 69433
+    - path: metrics/evaluate.py
+      hash: md5
+      md5: 2ab8099af8033eff18862e27142e6fa3
+      size: 716
+    outs:
+    - path: metrics/cluster_metrics.json
+      hash: md5
+      md5: 2aaf0247cf27fa5d7ece3edfb9a76b89
+      size: 730
